@@ -7,7 +7,7 @@ import {
   logoutUser,
   toggleSidebar,
   useUserSelector,
-} from '../features/userSlice';
+} from '../features/user/userSlice';
 
 const Navbar = () => {
   const [showLogout, setShowLogout] = useState(false);
@@ -42,7 +42,7 @@ const Navbar = () => {
           <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
             <button
               type='button'
-              onClick={() => dispatch(logoutUser())}
+              onClick={() => dispatch(logoutUser(`Goodbye ${user?.name}`))}
               className='dropdown-btn'
             >
               logout

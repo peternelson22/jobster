@@ -7,7 +7,7 @@ import {
   loginUser,
   registerUser,
   useUserSelector,
-} from '../features/userSlice';
+} from '../features/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

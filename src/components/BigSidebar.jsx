@@ -1,5 +1,5 @@
 import Wrapper from '../assets/wrappers/BigSidebar';
-import { useUserSelector } from '../features/userSlice';
+import { useUserSelector } from '../features/user/userSlice';
 import Logo from './Logo';
 import NavLinks from './NavLinks';
 

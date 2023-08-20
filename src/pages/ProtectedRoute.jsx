@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { useUserSelector } from '../features/userSlice';
+import { useUserSelector } from '../features/user/userSlice';
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useUserSelector();

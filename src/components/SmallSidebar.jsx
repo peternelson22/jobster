@@ -2,7 +2,7 @@ import Wrapper from '../assets/wrappers/SmallSidebar';
 import { FaTimes } from 'react-icons/fa';
 import Logo from './Logo';
 import { useDispatch } from 'react-redux';
-import { toggleSidebar, useUserSelector } from '../features/userSlice';
+import { toggleSidebar, useUserSelector } from '../features/user/userSlice';
 import NavLinks from './NavLinks';
 
 const SmallSidebar = () => {
