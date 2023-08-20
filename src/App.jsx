@@ -1,14 +1,25 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Layout } from './pages/dashboard';
-import { Error, Landing, Register } from './pages';
+import { AddJob, Layout, Profile, Stats } from './pages/dashboard';
+import { Error, Landing, ProtectedRoute, Register } from './pages';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllJobs from './pages/dashboard/AllJobs';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     errorElement: <Error />,
+    children: [
+      { index: true, element: <Stats /> },
+      { path: 'all-jobs', element: <AllJobs /> },
+      { path: 'add-job', element: <AddJob /> },
+      { path: 'profile', element: <Profile /> },
+    ],
   },
   {
     path: 'landing',
@@ -23,7 +34,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
       <ToastContainer position='top-center' />
     </>
   );

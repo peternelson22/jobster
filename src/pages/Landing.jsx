@@ -1,8 +1,10 @@
 import main from '../assets/images/main.svg';
 import Wrapper from '../assets/wrappers/LandingPage';
 import { Logo } from '../components';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <nav>
@@ -15,7 +17,12 @@ const Landing = () => {
             job <span>tracking</span> app
           </h1>
           <p>some text</p>
-          <button className='btn btn-hero'>Login/Register</button>
+          <button
+            onClick={() => navigate('/register')}
+            className='btn btn-hero'
+          >
+            Login/Register
+          </button>
         </div>
         <img src={main} alt='job hunt' className='img main-img' />
       </div>
