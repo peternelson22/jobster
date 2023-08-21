@@ -49,7 +49,7 @@ const Register = () => {
     if (user) {
       setTimeout(() => {
         navigate('/');
-      }, 1500);
+      }, 800);
     }
   }, [user]);
   return (
